@@ -36,6 +36,16 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Produc
                         product = productArrayList.get(getAdapterPosition());
                         Log.e("tag" , product.productImage + "--" + product.productId + "--"
                                 + product.productTitle + "--" + product.productPrice);
+                        Intent intent = new Intent(view.getContext(),ProductDetailsActivity.class);
+                        //way 2
+                        intent.putExtra("product",product);
+
+                        //way 1
+//                        intent.putExtra("productId", product.productId);
+//                        intent.putExtra("productTitle", product.productTitle);
+//                        intent.putExtra("productImage", product.productImage);
+//                        intent.putExtra("productPrice", product.productPrice);
+                        view.getContext().startActivity(intent);
                 }
             });
         }
